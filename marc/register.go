@@ -32,10 +32,10 @@ func RegisterEncoder(name string, fn EncoderFactory) {
 	encoders[name] = fn
 }
 
-func NewDecoder(name string, r io.Reader) Decoder {
-	return decoders[name](r)
+func NewDecoder(format string, r io.Reader) Decoder {
+	return decoders[format](r)
 }
 
-func NewEncoder(name string, w io.Writer) Encoder {
-	return encoders[name](w)
+func NewEncoder(format string, w io.Writer) Encoder {
+	return encoders[format](w)
 }
