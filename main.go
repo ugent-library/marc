@@ -9,6 +9,7 @@ import (
 
 func main() {
 	dec := marc.NewDecoder("marcxml", os.Stdin)
+	enc := marc.NewEncoder("marcinjson", os.Stdout)
 	for {
 		rec, err := dec.Decode()
 		if err != nil {
@@ -17,6 +18,9 @@ func main() {
 		if rec == nil {
 			break
 		}
-		log.Printf("%+v", rec)
+		err = enc.Encode(rec)
+		if err != nil {
+			log.Panic(err)
+		}
 	}
 }

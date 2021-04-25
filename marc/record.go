@@ -1,12 +1,10 @@
 package marc
 
 type Record struct {
-	Leader        Leader         `xml:"leader"`
+	Leader        string         `xml:"leader"`
 	ControlFields []ControlField `xml:"controlfield"`
 	DataFields    []DataField    `xml:"datafield"`
 }
-
-type Leader string
 
 type ControlField struct {
 	Tag   string `xml:"tag,attr"`
