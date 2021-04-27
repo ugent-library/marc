@@ -22,6 +22,7 @@ type Encoder interface {
 
 func init() {
 	RegisterDecoder("marcxml", NewMARCXMLDecoder)
+	RegisterDecoder("alephseq", NewAlephSeqDecoder)
 	RegisterEncoder("marcinjson", NewMARCInJSONEncoder)
 }
 
