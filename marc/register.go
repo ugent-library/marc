@@ -34,9 +34,15 @@ func RegisterEncoder(name string, fn EncoderFactory) {
 }
 
 func NewDecoder(format string, r io.Reader) Decoder {
-	return decoders[format](r)
+	if dec, ok := decoders[format]; ok {
+		return dec(r)
+	}
+	return nil
 }
 
 func NewEncoder(format string, w io.Writer) Encoder {
-	return encoders[format](w)
+	if enc, ok := encoders[format]; ok {
+		return enc(w)
+	}
+	return nil
 }
