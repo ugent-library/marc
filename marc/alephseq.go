@@ -24,6 +24,7 @@ func (d *alephseqDecoder) Decode() (*Record, error) {
 
 	if d.fieldBuf != nil {
 		rec = addField(rec, d.fieldBuf)
+		d.fieldBuf = nil
 	}
 
 	scanner := d.scanner
