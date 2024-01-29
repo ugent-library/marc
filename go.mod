@@ -1,4 +1,4 @@
-module github.com/ugent-library/go-marc
+module github.com/ugent-library/marc
 
 go 1.16
 

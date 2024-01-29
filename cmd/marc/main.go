@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/ugent-library/go-marc/marc"
+	"github.com/ugent-library/marc"
 )
 
 func main() {
